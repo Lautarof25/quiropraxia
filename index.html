@@ -13,6 +13,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css">
+
   <style>
     :root {
       /* Palette */
@@ -202,6 +204,7 @@
 
     .hero h1 span {
       background: linear-gradient(135deg, var(--accent-blue), var(--aqua));
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
@@ -493,13 +496,13 @@
         <div class="hero-badge">
           Atención especializada
         </div>
-        <h1>Recupera tu bienestar y <span>movilidad natural</span></h1>
+        <h1>Recuperá tu bienestar y <span>movilidad natural</span></h1>
         <p>
           Atención quiropráctica profesional enfocada en aliviar dolores,
           mejorar tu postura y optimizar tu calidad de vida de forma natural y segura.
         </p>
         <div class="hero-actions">
-          <a href="https://wa.me/549XXXXXXXXXX" class="btn btn-primary">
+          <a href="https://wa.me/5491166150592" class="btn btn-primary">
             Reservar turno
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -549,6 +552,61 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="servicios" class="services-section">
+    <div class="services-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+
+    <div class="services-container">
+      <div class="services-header">
+        <h2>¡Decile Adios a ese dolor crónico!</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- Item 1 -->
+        <div class="service-item">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Rutinas</h3>
+          <p>Clases y rutinas individualizadas.</p>
+        </div>
+
+        <!-- Item 2 (Highlighted Card) -->
+        <div class="service-item highlighted">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Profesionales</h3>
+          <p>A cargo de Lic. Kinesiólogo Fisiatra.</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="service-item">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Confianza</h3>
+          <p>Seguridad, confort y eficiencia.</p>
+        </div>
+      </div>
     </div>
   </section>
 
