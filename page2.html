@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiropraxia Profesional - Alternativa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paleta original de style.css y variables solicitadas */
+      --primary-dark: #072955;
+      --primary-blue: #3771a4;
+      --accent-blue: #2772bd;
+      --soft-blue: #abcae4;
+      --aqua: #69c7c6;
+      --light-bg: #f8fafc;
+
+      /* Contenido */
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --cream: #f0ebe6;
+      --peach-soft: #dcb198;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-dark);
+      /* Color oscuro principal usando tu paleta en lugar del verde */
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    @media(min-width: 992px) {
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Usamos tu peach-soft como equivalente al elemento de contraste (botón amarillo) */
+    .btn-primary {
+      background: var(--peach-soft);
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(220, 177, 152, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 7rem;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem 5%;
+      position: relative;
+      z-index: 2;
+      order: 1;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    @media(min-width: 992px) {
+      .hero-text {
+        width: 50%;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow svg {
+      width: 18px;
+      height: 18px;
+      color: var(--peach-soft);
+    }
+
+    .hero-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .hero-text p {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Right Column / Image Mask (Mobile First) */
+    .hero-visual {
+      display: block;
+      width: 100%;
+      position: relative;
+      order: 2;
+      margin-top: 1rem;
+      padding-bottom: 3rem;
+      animation: fadeLeft 1s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+
+    .image-mask {
+      width: 100%;
+      height: 350px;
+      border-top-left-radius: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-mask img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Curva blanca inferor que se superpone */
+    .curve-overlay {
+      position: absolute;
+      bottom: 1rem;
+      right: 0;
+      width: 85%;
+      height: auto;
+      background-color: var(--light-bg);
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .stats-widget {
+      text-align: center;
+    }
+
+    .stats-widget h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      color: var(--text-dark);
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+
+    .stats-widget p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Stack de avatares */
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .avatar-stack img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid var(--light-bg);
+      object-fit: cover;
+      margin-left: -15px;
+      background-color: var(--soft-blue);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .avatar-stack img:first-child {
+      margin-left: 0;
+    }
+
+    .avatar-stack .more-avatars {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid var(--light-bg);
+      background-color: var(--peach-soft);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-left: -15px;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    @media(min-width: 992px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        padding-top: 5rem;
+      }
+
+      .hero-container {
+        order: auto;
+      }
+
+      .hero-visual {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+
+      .image-mask {
+        border-top-left-radius: 400px;
+        /* Crea la curva superior izquierda que envuelve la imagen */
+        height: 100%;
+      }
+
+      .curve-overlay {
+        bottom: 0px;
+        width: 95%;
+        /* Toma casi todo el ancho de la imagen */
+        height: 40%;
+        border-top-left-radius: 100% 100%;
+        border-bottom-left-radius: 0;
+        /* Curva pronunciada */
+        padding-top: 3rem;
+        box-shadow: none;
+      }
+
+      .stats-widget {
+        transform: translateY(-10px);
+      }
+
+      .stats-widget h3 {
+        font-size: 2.5rem;
+      }
+
+      .stats-widget p {
+        font-size: 0.9rem;
+      }
+
+      .avatar-stack img,
+      .avatar-stack .more-avatars {
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Animaciones */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Translúcida / Oscura -->
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="logoFondo.png" alt="logo" width="75" height="75">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Páginas</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+
+    <a href="#" class="btn btn-primary">
+      Empezar
+    </a>
+  </nav>
+
+  <!-- Hero Section con Layout Dividido y Máscara Curva -->
+  <section class="hero">
+
+    <!-- Visual background column for structure on desktop -->
+    <div class="hero-visual">
+      <div class="image-mask">
+        <!-- Reemplaza con tu imagen de quiropraxia deseada -->
+        <img src="Copilot_20260221_202821.png" alt="Especialista realizando quiropraxia">
+      </div>
+
+      <!-- Bloque inferior blanco con curva que solapa imagen -->
+      <div class="curve-overlay">
+        <div class="stats-widget">
+          <div class="avatar-stack">
+            <img src="https://i.pravatar.cc/100?img=1" alt="Paciente">
+            <img src="https://i.pravatar.cc/100?img=2" alt="Paciente">
+            <img src="https://i.pravatar.cc/100?img=3" alt="Paciente">
+            <div class="more-avatars">31+</div>
+          </div>
+          <h3>10+</h3>
+          <p>Tratamientos Especializados</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor del contenido que respeta width -->
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z" />
+          </svg>
+          Sentite mejor, movete libre, viví pleno
+        </div>
+
+        <h1>Aliviando el dolor paso a paso</h1>
+
+        <p>
+          Atención personalizada para ayudarte a recuperar tu bienestar,
+          aliviando dolores y mejorando tu calidad de vida de forma segura.
+        </p>
+
+        <div class="actions">
+          <a href="https://wa.me/549XXXXXXXXXX" class="btn btn-primary">
+            Reservar Turno
+          </a>
+          <div class="price">
+            $35.000 <span>/ por sesión</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+
+</html>
