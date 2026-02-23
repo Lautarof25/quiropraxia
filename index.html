@@ -517,7 +517,6 @@
 
       <div class="hero-visual">
         <div class="image-wrapper">
-          <!-- Imagen representativa de Unsplash (ya que no dispongo de la imagen local) -->
           <img src="Copilot_20260221_202821.png" alt="Quiropraxia profesional y bienestar">
         </div>
 
@@ -567,44 +566,49 @@
         <h2>¡Decile Adios a ese dolor crónico!</h2>
       </div>
 
-      <div class="services-grid">
-        <!-- Item 1 -->
-        <div class="service-item">
-          <div class="service-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
+      <div class="services-layout">
+        <div class="services-grid">
+          <!-- Item 1 -->
+          <div class="service-item">
+            <div class="service-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+            <h3>Rutinas</h3>
+            <p>Clases y rutinas individualizadas.</p>
           </div>
-          <h3>Rutinas</h3>
-          <p>Clases y rutinas individualizadas.</p>
+
+          <!-- Item 2 (Highlighted Card) -->
+          <div class="service-item highlighted">
+            <div class="service-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h3>Profesionales</h3>
+            <p>A cargo de Lic. Kinesiólogo Fisiatra.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="service-item">
+            <div class="service-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>Confianza</h3>
+            <p>Seguridad, confort y eficiencia.</p>
+          </div>
         </div>
 
-        <!-- Item 2 (Highlighted Card) -->
-        <div class="service-item highlighted">
-          <div class="service-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+        <div class="services-visual">
+          <img src="images/puntos_dolor.jpg" alt="Puntos de Dolor">
+          <div class="visual-overlay">
+            <span>Tratamos tu dolor</span>
           </div>
-          <h3>Profesionales</h3>
-          <p>A cargo de Lic. Kinesiólogo Fisiatra.</p>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="service-item">
-          <div class="service-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3>Confianza</h3>
-          <p>Seguridad, confort y eficiencia.</p>
         </div>
       </div>
     </div>
@@ -626,7 +630,7 @@
 
         <div class="facilities-display">
           <div class="facilities-img-wrapper">
-            <img src="Copilot_20260221_202821.png" alt="Evaluación Inicial">
+            <img id="facility-image" src="images/cons_interior1.jpeg" alt="Evaluación Inicial">
           </div>
           <div class="facilities-info">
             <h3>Evaluación Inicial</h3>
@@ -647,7 +651,55 @@
         <div class="cross-icon cross-2"></div>
         <div class="cross-icon cross-3"></div>
         <div class="banner-image">
-          <img src="Copilot_20260221_202821.png" alt="Doctores">
+          <img src="images/cons_interior2.jpeg" alt="Instalaciones">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Myths vs Facts Section -->
+  <section id="mitos" class="myths-section">
+    <div class="myths-container">
+      <div class="myths-header">
+        <h2 class="section-title">¿Verdadero o Falso?</h2>
+        <p>Despejamos tus dudas sobre la quiropraxia con información real y profesional.</p>
+      </div>
+
+      <div class="myths-grid">
+        <!-- Card 1 -->
+        <div class="myth-card">
+          <div class="myth-question">
+            <span class="badge myth">¿Verdadero o Falso?</span>
+            <h3>¿En caso de necesitar más de una sesión, las siguientes deben hacerse 1 vez por semana para que dé
+              resultado?</h3>
+          </div>
+          <div class="myth-answer">
+            <span class="badge fact">¡¡FALSO!!</span>
+            <p>La frecuencia de las sesiones depende de cada paciente y su dolencia. La segunda sesión puede hacerse a
+              los 14, 21 o 30 días. <strong>Cada paciente es único e irrepetible</strong>, y el tratamiento elegido
+              también.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="myth-card highlighted">
+          <div class="myth-question">
+            <span class="badge myth">¿Verdadero o Falso?</span>
+            <h3>¿Para solucionar un problema hay que hacer sesiones semanales por varios meses, o se pierde el efecto?
+            </h3>
+          </div>
+          <div class="myth-answer">
+            <span class="badge fact">¡¡FALSO!!</span>
+            <p>La cantidad de sesiones es diferente para cada paciente. En el <strong>80% de los casos</strong> se
+              obtiene una recuperación total o una mejoría notable con <strong>una sola sesión</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="myths-footer">
+        <div class="footer-quote">
+          <p>“¡Informate para aprender, aprende para ser libre!”</p>
+          <span class="brand-text">QUIROPRAXIA MATTALDI</span>
         </div>
       </div>
     </div>
@@ -672,7 +724,7 @@
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img src="Copilot_20260221_202821.png" alt="Miguel G.">
+              <img src="images/testimony_default.png" alt="Miguel G.">
             </div>
             <div class="author-info">
               <h4>Miguel G.</h4>
@@ -696,7 +748,7 @@
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img src="Copilot_20260221_202821.png" alt="Sarah M.">
+              <img src="images/testimony_default.png" alt="Sarah M.">
             </div>
             <div class="author-info">
               <h4>Sarah M.</h4>
@@ -717,7 +769,7 @@
   <section id="testimonios-v2" class="testi-v2">
     <div class="testi-v2-container">
       <div class="testi-v2-image">
-        <img src="Copilot_20260221_202821.png" alt="Consulta quiropráctica">
+        <img src="images/testimony_default.png" alt="Consulta quiropráctica">
       </div>
       <div class="testi-v2-content">
         <div class="testi-v2-badge">
@@ -741,7 +793,7 @@
 
         <div class="testi-v2-footer">
           <div class="testi-v2-author">
-            <img src="Copilot_20260221_202821.png" alt="Judith Rodriguez">
+            <img src="images/practicas3.jpeg" alt="Judith Rodriguez">
             <div class="author-details">
               <h4>Judith Rodriguez</h4>
               <span>Lesión Deportiva</span>
@@ -767,6 +819,88 @@
             <path
               d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
           </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="galeria" class="gallery-section">
+    <div class="gallery-container">
+      <div class="gallery-header">
+        <h2 class="section-title">Galería de la Clínica</h2>
+        <p>Un espacio diseñado para tu bienestar y comodidad.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/cons_exterior3.jpeg" alt="Exterior Clínica"></div>
+        <div class="gallery-item"><img src="images/cons_interior3.jpg" alt="Interior Clínica"></div>
+        <div class="gallery-item"><img src="images/cons_exterior4.jpeg" alt="Entrada"></div>
+        <div class="gallery-item"><img src="images/cons_interior4.jpg" alt="Consultorio"></div>
+        <div class="gallery-item"><img src="images/cons_exterior5.jpeg" alt="Fachada"></div>
+        <div class="gallery-item"><img src="images/consultorio_frente1.jpeg" alt="Frente"></div>
+        <div class="gallery-item"><img src="images/cons_exterior6.jpeg" alt="Detalle Exterior"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section id="tecnologia" class="tech-section">
+    <div class="tech-container">
+      <div class="tech-header">
+        <h2 class="section-title">Tecnología de Vanguardia</h2>
+        <p>Contamos con el equipamiento más avanzado para garantizar la efectividad de cada tratamiento.</p>
+      </div>
+      <div class="tech-slider">
+        <div class="tech-track">
+          <div class="tech-card">
+            <img src="images/equipos1.jpeg" alt="Equipamiento 1">
+            <h4>Diagnóstico</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos2.jpeg" alt="Equipamiento 2">
+            <h4>Rehabilitación</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos3.jpeg" alt="Equipamiento 3">
+            <h4>Fisioterapia</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos4.jpeg" alt="Equipamiento 4">
+            <h4>Ajuste Preciso</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos5.jpg" alt="Equipamiento 5">
+            <h4>Bio-Tecnología</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos6.jpg" alt="Equipamiento 6">
+            <h4>Recuperación</h4>
+          </div>
+          <!-- Duplicate for seamless scroll -->
+          <div class="tech-card">
+            <img src="images/equipos1.jpeg" alt="Equipamiento 1">
+            <h4>Diagnóstico</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos2.jpeg" alt="Equipamiento 2">
+            <h4>Rehabilitación</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos3.jpeg" alt="Equipamiento 3">
+            <h4>Fisioterapia</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos4.jpeg" alt="Equipamiento 4">
+            <h4>Ajuste Preciso</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos5.jpg" alt="Equipamiento 5">
+            <h4>Bio-Tecnología</h4>
+          </div>
+          <div class="tech-card">
+            <img src="images/equipos6.jpg" alt="Equipamiento 6">
+            <h4>Recuperación</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -801,7 +935,7 @@
             <p>Especialista en columna vertebral</p>
           </div>
           <div class="team-card-image">
-            <img src="Copilot_20260221_202821.png" alt="Dr. Matías Silva">
+            <img src="images/testimony_default.png" alt="Dr. Matías Silva">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -818,7 +952,7 @@
             <p>Fisioterapeuta y Rehabilitadora</p>
           </div>
           <div class="team-card-image">
-            <img src="Copilot_20260221_202821.png" alt="Dra. Laura Gómez">
+            <img src="images/testimony_default.png" alt="Dra. Laura Gómez">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -836,7 +970,7 @@
             <p>Masoterapia y Quiropraxia</p>
           </div>
           <div class="team-card-image">
-            <img src="Copilot_20260221_202821.png" alt="Lic. Pablo Ruiz">
+            <img src="images/testimony_default.png" alt="Lic. Pablo Ruiz">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -853,6 +987,23 @@
     </div>
   </section>
 
+  <!-- Insurance Section -->
+  <section class="insurance-section">
+    <div class="insurance-container">
+      <h2 class="section-title">Obras Sociales</h2>
+      <p>Trabajamos con una amplia variedad de coberturas para facilitar tu acceso a la salud.</p>
+      <div class="insurance-grid">
+        <div class="insurance-logo"><img src="images/obra_social1.svg" alt="Obra Social 1"></div>
+        <div class="insurance-logo"><img src="images/obra_social2.svg" alt="Obra Social 2"></div>
+        <div class="insurance-logo"><img src="images/obra_social3.svg" alt="Obra Social 3"></div>
+        <div class="insurance-logo"><img src="images/obra_social4.svg" alt="Obra Social 4"></div>
+        <!-- Repeated logos for more density -->
+        <div class="insurance-logo"><img src="images/obra_social1.svg" alt="Obra Social 1"></div>
+        <div class="insurance-logo"><img src="images/obra_social2.svg" alt="Obra Social 2"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -861,13 +1012,7 @@
         <!-- Brand & About -->
         <div class="footer-brand-section">
           <a href="#" class="brand footer-brand">
-            <div class="brand-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            Quiropraxia
+            <img src="logoFondo.png" alt="logo" height="100" width="100">
           </a>
           <p class="footer-desc">
             Brindamos atención quiropráctica profesional enfocada en mejorar su salud, aliviar dolores crónicos y
@@ -973,11 +1118,70 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Quiropraxia Profesional. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Quiropraxia Mattaldi. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
+  <script>
+    // Tabs functionality for Installations
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const facilityImg = document.getElementById('facility-image');
+    const facilityTitle = document.querySelector('.facilities-info h3');
+    const facilityDesc = document.querySelector('.facilities-info p');
 
+    const facilityData = {
+      "Evaluación Inicial": {
+        img: "images/cons_interior1.jpeg",
+        desc: "Realizamos un diagnóstico completo de su postura y estado neurológico para diseñar un plan de cuidado quiropráctico personalizado."
+      },
+      "Ajuste Quiropráctico": {
+        img: "images/cons_interior2.jpeg",
+        desc: "El ajuste es el corazón de la quiropraxia. Aplicamos impulsos precisos para corregir subluxaciones vertebrales y liberar su sistema nervioso."
+      },
+      "Fisioterapia": {
+        img: "images/equipos1.jpeg",
+        desc: "Utilizamos agentes físicos y tecnología de punta para complementar su recuperación, reducir la inflamación y acelerar la sanación."
+      },
+      "Rehabilitación Deportiva": {
+        img: "images/equipos2.jpeg",
+        desc: "Programas específicos para atletas de todos los niveles, enfocados en recuperar la función óptima y prevenir futuras lesiones."
+      },
+      "Masoterapia": {
+        img: "images/cons_interior3.jpg",
+        desc: "Técnicas manuales aplicadas para relajar la musculatura, mejorar la circulación y preparar el cuerpo para el ajuste quiropráctico."
+      }
+    };
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active class
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update content
+        const data = facilityData[btn.innerText];
+        if (data) {
+          facilityImg.style.opacity = '0';
+          setTimeout(() => {
+            facilityImg.src = data.img;
+            facilityTitle.innerText = btn.innerText;
+            facilityDesc.innerText = data.desc;
+            facilityImg.style.opacity = '1';
+          }, 300);
+        }
+      });
+    });
+
+    // Tech Slider Auto-scroll
+    const track = document.querySelector('.tech-track');
+    let isPaused = false;
+
+    track.addEventListener('mouseenter', () => isPaused = true);
+    track.addEventListener('mouseleave', () => isPaused = false);
+
+    // Simple continuous scroll animation handled by CSS, 
+    // but we can add drag functionality here if needed.
+  </script>
 </body>
 
 </html>

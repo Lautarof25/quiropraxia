@@ -61,26 +61,57 @@
   color: white;
 }
 
-.services-grid {
+.services-layout {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
 }
 
-@media (min-width: 768px) {
-  .services-grid {
+@media (min-width: 992px) {
+  .services-layout {
     flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .services-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  .services-visual {
+    flex: 0.4;
+    display: block !important;
   }
 }
 
-@media (min-width: 1024px) {
-  .services-grid {
-    gap: 3rem;
-  }
+.services-visual {
+  display: none;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.services-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visual-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  font-weight: 700;
+  text-align: center;
 }
 
 .service-item {
@@ -89,7 +120,6 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 300px;
   padding: 2.5rem 1.5rem;
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -1062,6 +1092,135 @@
   pointer-events: none;
 }
 
+/* Gallery Section */
+.gallery-section {
+  padding: 8rem 5%;
+  background-color: white;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Technology Section */
+.tech-section {
+  padding: 8rem 5%;
+  background-color: var(--primary-dark);
+  color: white;
+  overflow: hidden;
+}
+
+.tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.tech-header .section-title {
+  color: white;
+}
+
+.tech-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.tech-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollTech 40s linear infinite;
+  width: max-content;
+}
+
+.tech-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-card {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.tech-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.tech-card h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--aqua);
+}
+
+@keyframes scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Facility Image Transition */
+#facility-image {
+  transition: opacity 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .testi-v2 {
     padding: 4rem 4%;
@@ -1074,4 +1233,206 @@
   .testi-v2-title {
     font-size: 2rem;
   }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Insurance Section */
+.insurance-section {
+  padding: 8rem 5%;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.insurance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insurance-container p {
+  color: var(--text-muted);
+  margin-bottom: 4rem;
+  font-size: 1.1rem;
+}
+
+.insurance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.insurance-logo {
+  width: 100%;
+  max-width: 180px;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.insurance-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.insurance-logo img {
+  max-width: 100%;
+  height: 60px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .insurance-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .insurance-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Myths & Facts Section */
+.myths-section {
+  padding: 8rem 5%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.myths-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.myths-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.myths-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .myths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.myth-card {
+  background: var(--light-bg);
+  border-radius: 30px;
+  padding: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.myth-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.myth-card.highlighted {
+  background: linear-gradient(135deg, white 0%, #eef6ff 100%);
+  border: 1px solid var(--soft-blue);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.badge.myth {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.badge.fact {
+  background: #d1fae5;
+  color: #10b981;
+}
+
+.myth-question h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: var(--primary-dark);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.myth-answer {
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+}
+
+.myth-answer p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.myth-answer strong {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.myths-footer {
+  text-align: center;
+  margin-top: 6rem;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  border-radius: 30px;
+  color: white;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(7, 41, 85, 0.2);
+}
+
+.myths-footer p {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--aqua);
+  font-size: 1rem;
+  text-transform: uppercase;
 }
