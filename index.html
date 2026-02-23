@@ -466,6 +466,147 @@
         bottom: -5%;
       }
     }
+
+    /* Navbar Links & Mobile Menu */
+    .nav-links {
+      display: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .nav-links a:hover {
+      color: var(--aqua);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+      background: none;
+      border: none;
+      color: var(--primary-dark);
+      cursor: pointer;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .desktop-only {
+        display: inline-flex;
+      }
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(248, 250, 252, 0.98);
+      backdrop-filter: blur(15px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transform: translateY(-100%);
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .mobile-menu-overlay.active {
+      transform: translateY(0);
+    }
+
+    .close-menu-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 5%;
+      background: none;
+      border: none;
+      color: var(--primary-dark);
+      cursor: pointer;
+    }
+
+    .mobile-link {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #25d366;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: pulse-wa 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+      animation: none;
+    }
+
+    .whatsapp-float svg {
+      width: 35px;
+      height: 35px;
+      fill: currentColor;
+    }
+
+    @keyframes pulse-wa {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
   </style>
 </head>
 
@@ -483,10 +624,48 @@
     <a href="#" class="brand">
       <img loading="eager" class="logo" src="logo-removebg-preview.png" alt="logo">
     </a>
-    <a href="https://wa.me/5491166150592" class="btn btn-primary btn-contact">
-      Contacto
-    </a>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#galeria">Galería</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#mitos">Mitos</a>
+      <a href="#testimonios">Testimonios</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://wa.me/5491166150592" class="btn btn-primary btn-contact desktop-only">
+        Contacto
+      </a>
+      <button class="mobile-menu-btn" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <button class="close-menu-btn" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#instalaciones" class="mobile-link">Instalaciones</a>
+    <a href="#galeria" class="mobile-link">Galería</a>
+    <a href="#tecnologia" class="mobile-link">Tecnología</a>
+    <a href="#equipo" class="mobile-link">Equipo</a>
+    <a href="#mitos" class="mobile-link">Mitos</a>
+    <a href="#testimonios" class="mobile-link">Testimonios</a>
+    <a href="https://wa.me/5491166150592" class="btn btn-primary mt-4">Contacto</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -651,7 +830,7 @@
         <div class="cross-icon cross-2"></div>
         <div class="cross-icon cross-3"></div>
         <div class="banner-image">
-          <img loading="lazy" src="images/cons_interior2.jpeg" alt="Instalaciones">
+          <img loading="lazy" src="images/24horas.png" alt="Instalaciones">
         </div>
       </div>
     </div>
@@ -661,7 +840,7 @@
   <section id="galeria" class="gallery-section">
     <div class="gallery-container">
       <div class="gallery-header">
-        <h2 class="section-title">Galería de la Clínica</h2>
+        <h2 class="section-title">Galería del consultorio</h2>
         <p>Un espacio diseñado para tu bienestar y comodidad.</p>
       </div>
       <div class="gallery-grid">
@@ -832,12 +1011,24 @@
         <!-- Card 1 -->
         <div class="myth-card">
           <div class="myth-question">
-            <span class="badge myth">¿Verdadero o Falso?</span>
+            <span class="badge myth">
+              <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              ¿Verdadero o Falso?
+            </span>
             <h3>¿En caso de necesitar más de una sesión, las siguientes deben hacerse 1 vez por semana para que dé
               resultado?</h3>
           </div>
           <div class="myth-answer">
-            <span class="badge fact">¡¡FALSO!!</span>
+            <span class="badge fact">
+              <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              ¡¡FALSO!!
+            </span>
             <p>La frecuencia de las sesiones depende de cada paciente y su dolencia. La segunda sesión puede hacerse a
               los 14, 21 o 30 días. <strong>Cada paciente es único e irrepetible</strong>, y el tratamiento elegido
               también.</p>
@@ -847,12 +1038,24 @@
         <!-- Card 2 -->
         <div class="myth-card highlighted">
           <div class="myth-question">
-            <span class="badge myth">¿Verdadero o Falso?</span>
+            <span class="badge myth">
+              <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              ¿Verdadero o Falso?
+            </span>
             <h3>¿Para solucionar un problema hay que hacer sesiones semanales por varios meses, o se pierde el efecto?
             </h3>
           </div>
           <div class="myth-answer">
-            <span class="badge fact">¡¡FALSO!!</span>
+            <span class="badge fact">
+              <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              ¡¡FALSO!!
+            </span>
             <p>La cantidad de sesiones es diferente para cada paciente. En el <strong>80% de los casos</strong> se
               obtiene una recuperación total o una mejoría notable con <strong>una sola sesión</strong>.</p>
           </div>
@@ -1179,9 +1382,36 @@
     track.addEventListener('mouseenter', () => isPaused = true);
     track.addEventListener('mouseleave', () => isPaused = false);
 
-    // Simple continuous scroll animation handled by CSS, 
-    // but we can add drag functionality here if needed.
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const mobileMenuOverlay = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    const toggleMenu = () => {
+      mobileMenuOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+    };
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
   </script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/5491166150592" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+    </svg>
+  </a>
 </body>
 
 </html>
