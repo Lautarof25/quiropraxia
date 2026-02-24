@@ -629,8 +629,7 @@
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#instalaciones">Instalaciones</a>
-      <a href="#galeria">Galería</a>
-      <a href="#tecnologia">Tecnología</a>
+      <a href="#consultorio">Consultorio</a>
       <a href="#equipo">Equipo</a>
       <a href="#mitos">Mitos</a>
       <a href="#testimonios">Testimonios</a>
@@ -661,8 +660,7 @@
     </button>
     <a href="#servicios" class="mobile-link">Servicios</a>
     <a href="#instalaciones" class="mobile-link">Instalaciones</a>
-    <a href="#galeria" class="mobile-link">Galería</a>
-    <a href="#tecnologia" class="mobile-link">Tecnología</a>
+    <a href="#consultorio" class="mobile-link">Consultorio</a>
     <a href="#equipo" class="mobile-link">Equipo</a>
     <a href="#mitos" class="mobile-link">Mitos</a>
     <a href="#testimonios" class="mobile-link">Testimonios</a>
@@ -832,82 +830,65 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="galeria" class="gallery-section">
-    <div class="gallery-container">
-      <div class="gallery-header">
-        <h2 class="section-title">Galería del consultorio</h2>
-        <p>Un espacio diseñado para tu bienestar y comodidad.</p>
+  <!-- Consultorio & Tech Section (Auto Gallery) -->
+  <section id="consultorio" class="consultorio-gallery">
+    <div class="gallery-wrapper">
+      <div class="bento-header">
+        <h2 class="section-title">El Consultorio y Tecnología</h2>
+        <p>Un espacio cálido diseñado para tu bienestar, equipado con tecnología de vanguardia para tu recuperación.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img loading="lazy" src="images/cons_exterior3.jpeg" alt="Exterior Clínica"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/cons_interior3.jpg" alt="Interior Clínica"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/cons_exterior4.jpeg" alt="Entrada"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/cons_interior4.jpg" alt="Consultorio"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/cons_exterior5.jpeg" alt="Fachada"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/consultorio_frente1.jpeg" alt="Frente"></div>
-        <div class="gallery-item"><img loading="lazy" src="images/cons_exterior6.jpeg" alt="Detalle Exterior"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Technology Section -->
-  <section id="tecnologia" class="tech-section">
-    <div class="tech-container">
-      <div class="tech-header">
-        <h2 class="section-title">Tecnología de Vanguardia</h2>
-        <p>Contamos con el equipamiento más avanzado para garantizar la efectividad de cada tratamiento.</p>
-      </div>
-      <div class="tech-slider">
-        <div class="tech-track">
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos1.jpeg" alt="Equipamiento 1">
-            <h4>Diagnóstico</h4>
+      <div class="interactive-gallery">
+        <!-- Main Layout Split -->
+        <div class="gallery-main-layout">
+          <!-- Main Image Display -->
+          <div class="main-display">
+            <img loading="lazy" id="main-gallery-img" src="images/cons_interior3.jpg" alt="Consultorio Principal">
+            <!-- Navigation Arrows -->
+            <button class="gallery-nav prev" id="gallery-prev" aria-label="Anterior">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="gallery-nav next" id="gallery-next" aria-label="Siguiente">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos2.jpeg" alt="Equipamiento 2">
-            <h4>Rehabilitación</h4>
+
+          <!-- Text Info -->
+          <div class="gallery-info">
+            <span class="gallery-tag" id="main-gallery-tag">Espacio</span>
+            <h3 id="main-gallery-title">Atención Personalizada</h3>
+            <p id="main-gallery-desc">Un entorno cálido diseñado para tu total relajación y confort.</p>
           </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos3.jpeg" alt="Equipamiento 3">
-            <h4>Fisioterapia</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos4.jpeg" alt="Equipamiento 4">
-            <h4>Ajuste Preciso</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos5.jpg" alt="Equipamiento 5">
-            <h4>Bio-Tecnología</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos6.jpg" alt="Equipamiento 6">
-            <h4>Recuperación</h4>
-          </div>
-          <!-- Duplicate for seamless scroll -->
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos1.jpeg" alt="Equipamiento 1">
-            <h4>Diagnóstico</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos2.jpeg" alt="Equipamiento 2">
-            <h4>Rehabilitación</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos3.jpeg" alt="Equipamiento 3">
-            <h4>Fisioterapia</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos4.jpeg" alt="Equipamiento 4">
-            <h4>Ajuste Preciso</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos5.jpg" alt="Equipamiento 5">
-            <h4>Bio-Tecnología</h4>
-          </div>
-          <div class="tech-card">
-            <img loading="lazy" src="images/equipos6.jpg" alt="Equipamiento 6">
-            <h4>Recuperación</h4>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="thumbnail-track-container">
+          <div class="thumbnail-track">
+            <div class="thumbnail active" data-index="0">
+              <img src="images/cons_interior3.jpg" alt="Consultorio Principal">
+            </div>
+            <div class="thumbnail" data-index="1">
+              <img src="images/equipos1.jpeg" alt="Tecnología de Diagnóstico">
+            </div>
+            <div class="thumbnail" data-index="2">
+              <img src="images/cons_exterior3.jpeg" alt="Fachada del Consultorio">
+            </div>
+            <div class="thumbnail" data-index="3">
+              <img src="images/equipos5.jpg" alt="Bio-Tecnología">
+            </div>
+            <div class="thumbnail" data-index="4">
+              <img src="images/equipos3.jpeg" alt="Fisioterapia y Rehabilitación">
+            </div>
+            <div class="thumbnail" data-index="5">
+              <img src="images/cons_interior4.jpg" alt="Confort en atención">
+            </div>
+            <div class="thumbnail" data-index="6">
+              <img src="images/equipos6.jpg" alt="Equipos de Recuperación">
+            </div>
           </div>
         </div>
       </div>
@@ -1373,12 +1354,7 @@
       });
     });
 
-    // Tech Slider Auto-scroll
-    const track = document.querySelector('.tech-track');
-    let isPaused = false;
 
-    track.addEventListener('mouseenter', () => isPaused = true);
-    track.addEventListener('mouseleave', () => isPaused = false);
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1400,6 +1376,127 @@
         document.body.style.overflow = '';
       });
     });
+
+    // Automatic Gallery Logic
+    const galleryData = [
+      { img: 'images/cons_interior3.jpg', tag: 'Espacio', title: 'Atención Personalizada', desc: 'Un entorno cálido diseñado para tu total relajación y confort, ideal para desconectarte desde que cruzas la puerta.' },
+      { img: 'images/equipos1.jpeg', tag: 'Diagnóstico', title: 'Diagnóstico Preciso', desc: 'Contamos con equipos de última generación para evaluar tu estado inicial y seguir de cerca tu progreso.' },
+      { img: 'images/cons_exterior3.jpeg', tag: 'Exterior', title: 'Acceso Fácil', desc: 'Ubicación conveniente con instalaciones preparadas para recibirte de la mejor manera en un ambiente tranquilo.' },
+      { img: 'images/equipos5.jpg', tag: 'Tecnología', title: 'Bio-Tecnología', desc: 'Utilizamos técnicas modernas y herramientas precisas para potenciar y asegurar la efectividad de tus ajustes.' },
+      { img: 'images/equipos3.jpeg', tag: 'Rehabilitación', title: 'Fisioterapia Avanzada', desc: 'Complementamos el cuidado quiropráctico con terapia física de calidad, acelerando tus tiempos de sanación.' },
+      { img: 'images/cons_interior4.jpg', tag: 'Confort', title: 'Ambiente Relajante', desc: 'Cuidamos cada detalle arquitectónico y visual de los consultorios para brindarte absoluta privacidad y confianza.' },
+      { img: 'images/equipos6.jpg', tag: 'Efectividad', title: 'Recuperación Rápida', desc: 'Ponemos a tu disposición todo el instrumental necesario para acompañar tu proceso hacia una movilidad óptima.' }
+    ];
+
+    const mainImg = document.getElementById('main-gallery-img');
+    const mainTag = document.getElementById('main-gallery-tag');
+    const mainTitle = document.getElementById('main-gallery-title');
+    const mainDesc = document.getElementById('main-gallery-desc');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const prevBtn = document.getElementById('gallery-prev');
+    const nextBtn = document.getElementById('gallery-next');
+
+    let currentGalleryIndex = 0;
+    let galleryInterval;
+    let isMouseHovered = false;
+
+    const updateGallery = (index) => {
+      // Fade out
+      mainImg.style.opacity = '0';
+      mainTag.style.opacity = '0';
+      mainTag.style.transform = 'translateY(10px)';
+      mainTitle.style.opacity = '0';
+      mainTitle.style.transform = 'translateY(10px)';
+      mainDesc.style.opacity = '0';
+      mainDesc.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = galleryData[index];
+        mainImg.src = data.img;
+        mainTag.innerText = data.tag;
+        mainTitle.innerText = data.title;
+        mainDesc.innerText = data.desc;
+
+        // Update thumbnails
+        thumbnails.forEach(t => t.classList.remove('active'));
+        thumbnails[index].classList.add('active');
+
+        // Scroll thumbnail into view smoothly without jumping page
+        const track = document.querySelector('.thumbnail-track');
+        const thumb = thumbnails[index];
+        const scrollTarget = thumb.offsetLeft - track.offsetLeft - (track.clientWidth / 2) + (thumb.clientWidth / 2);
+        track.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+
+        // Fade in
+        mainImg.style.opacity = '1';
+        mainTag.style.opacity = '1';
+        mainTag.style.transform = 'translateY(0)';
+        mainTitle.style.opacity = '1';
+        mainTitle.style.transform = 'translateY(0)';
+        mainDesc.style.opacity = '1';
+        mainDesc.style.transform = 'translateY(0)';
+      }, 300);
+
+      currentGalleryIndex = index;
+    };
+
+    const nextGalleryImage = () => {
+      let nextIndex = currentGalleryIndex + 1;
+      if (nextIndex >= galleryData.length) nextIndex = 0;
+      updateGallery(nextIndex);
+    };
+
+    const prevGalleryImage = () => {
+      let prevIndex = currentGalleryIndex - 1;
+      if (prevIndex < 0) prevIndex = galleryData.length - 1;
+      updateGallery(prevIndex);
+    };
+
+    const startGalleryAutoPlay = () => {
+      clearInterval(galleryInterval);
+      galleryInterval = setInterval(nextGalleryImage, 5000); // 5 seconds interval
+    };
+
+    const resetGalleryTimer = () => {
+      clearInterval(galleryInterval);
+      if (!isMouseHovered) {
+        startGalleryAutoPlay();
+      }
+    };
+
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        if (currentGalleryIndex !== index) {
+          updateGallery(index);
+          resetGalleryTimer();
+        }
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      nextGalleryImage();
+      resetGalleryTimer();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevGalleryImage();
+      resetGalleryTimer();
+    });
+
+    // Pause on hover
+    const galleryContainer = document.querySelector('.interactive-gallery');
+    galleryContainer.addEventListener('mouseenter', () => {
+      isMouseHovered = true;
+      clearInterval(galleryInterval);
+    });
+    galleryContainer.addEventListener('mouseleave', () => {
+      isMouseHovered = false;
+      startGalleryAutoPlay();
+    });
+
+    // Initial Start
+    startGalleryAutoPlay();
+
   </script>
 
   <!-- WhatsApp Floating Button -->
