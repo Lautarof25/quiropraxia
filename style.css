@@ -751,6 +751,109 @@ html {
   color: var(--soft-blue);
 }
 
+/* Turnos Section */
+.turnos-section {
+  position: relative;
+  padding: 6rem 5%;
+  background-color: var(--primary-dark);
+  background-image: radial-gradient(circle at top right, var(--accent-blue), var(--primary-dark));
+  color: white;
+  overflow: hidden;
+}
+
+.turnos-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.turnos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.turnos-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: white;
+  /* overriding .section-title default color */
+  margin-bottom: 1rem;
+}
+
+.turnos-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  /* lighter than muted text for dark bg */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.turnos-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(105, 199, 198, 0.2);
+  background: var(--light-bg);
+  backdrop-filter: blur(10px);
+}
+
+.turnos-iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.turnos-decor {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(60px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.turnos-decor-1 {
+  top: -150px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--aqua);
+  animation: float-pulse 10s ease-in-out infinite alternate;
+}
+
+.turnos-decor-2 {
+  bottom: -150px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: var(--accent-blue);
+  animation: float-pulse 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float-pulse {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.1) translate(-20px, 20px);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .turnos-iframe-wrapper {
+    height: 700px;
+    /* More height on mobile as content stacks */
+  }
+}
+
 /* Footer Section */
 .site-footer {
   background-color: var(--primary-dark);
