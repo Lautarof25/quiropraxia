@@ -28,9 +28,19 @@
     content="Centro de quiropraxia y fisioterapia en Bella Vista, Buenos Aires. Atención profesional para aliviar dolores, mejorar postura y recuperar movilidad natural.">
   <meta name="twitter:image" content="https://lautarof25.github.io/quiropraxia/og_image.jpg">
 
-  <!-- Google Fonts para alto impacto visual -->
+  <!-- Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" as="style">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="logo-removebg-preview.png" as="image">
+  <link rel="preload" href="Copilot_20260221_202821.png" as="image">
+
+  <!-- Google Fonts para alto impacto visual -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
     rel="stylesheet">
@@ -717,7 +727,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <a href="#top" class="brand" aria-label="Quiropraxia Mattaldi - Inicio">
-      <img loading="eager" class="logo" src="logo-removebg-preview.png" alt="Logo de Quiropraxia Mattaldi">
+      <img loading="eager" decoding="async" fetchpriority="high" width="75" height="75" class="logo" src="logo-removebg-preview.png" alt="Logo de Quiropraxia Mattaldi">
     </a>
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
@@ -795,7 +805,7 @@
 
       <div class="hero-visual">
         <div class="image-wrapper">
-          <img loading="eager" src="Copilot_20260221_202821.png" alt="Quiropraxia profesional y bienestar">
+          <img loading="eager" decoding="async" fetchpriority="high" width="500" height="625" src="Copilot_20260221_202821.png" alt="Quiropraxia profesional y bienestar">
         </div>
 
         <!-- Float Card 1: Social Proof -->
@@ -902,7 +912,7 @@
 
         <div class="facilities-display" role="tabpanel" id="facility-panel" aria-labelledby="tab-evaluacion">
           <div class="facilities-img-wrapper">
-            <img loading="lazy" id="facility-image" src="images/cons_interior1.jpeg" alt="Evaluación Inicial">
+            <img loading="lazy" decoding="async" id="facility-image" src="images/cons_interior1.jpeg" alt="Evaluación Inicial">
           </div>
           <div class="facilities-info">
             <h3>Evaluación Inicial</h3>
@@ -923,7 +933,7 @@
         <div class="cross-icon cross-2"></div>
         <div class="cross-icon cross-3"></div>
         <div class="banner-image">
-          <img loading="lazy" src="images/sesion_fisioterapia.png" alt="Instalaciones">
+          <img loading="lazy" decoding="async" src="images/sesion_fisioterapia.png" alt="Instalaciones">
         </div>
       </div>
     </div>
@@ -942,7 +952,7 @@
         <div class="gallery-main-layout">
           <!-- Main Image Display -->
           <div class="main-display">
-            <img loading="lazy" id="main-gallery-img" src="images/cons_interior3.jpg" alt="Consultorio Principal">
+            <img loading="lazy" decoding="async" id="main-gallery-img" src="images/cons_interior3.jpg" alt="Consultorio Principal">
             <!-- Navigation Arrows -->
             <button class="gallery-nav prev" id="gallery-prev" aria-label="Anterior" style="color: black;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1023,7 +1033,7 @@
             <p>Especialista en columna vertebral</p>
           </div>
           <div class="team-card-image">
-            <img loading="lazy" src="images/testimony_default.png" alt="Dr. Matías Silva">
+            <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="Dr. Matías Silva">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -1040,7 +1050,7 @@
             <p>Fisioterapeuta y Rehabilitadora</p>
           </div>
           <div class="team-card-image">
-            <img loading="lazy" src="images/testimony_default.png" alt="Dra. Laura Gómez">
+            <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="Dra. Laura Gómez">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -1058,7 +1068,7 @@
             <p>Masoterapia y Quiropraxia</p>
           </div>
           <div class="team-card-image">
-            <img loading="lazy" src="images/testimony_default.png" alt="Lic. Pablo Ruiz">
+            <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="Lic. Pablo Ruiz">
           </div>
           <div class="team-card-logo">
             <svg viewBox="0 0 24 24" fill="none" class="brand-small-icon" stroke="currentColor" stroke-width="2">
@@ -1186,7 +1196,7 @@
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img loading="lazy" src="images/testimony_default.png" alt="">
+              <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="">
             </div>
             <div class="author-info">
               <strong class="author-name">Miguel G.</strong>
@@ -1210,7 +1220,7 @@
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img loading="lazy" src="images/testimony_default.png" alt="">
+              <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="">
             </div>
             <div class="author-info">
               <strong class="author-name">Sarah M.</strong>
@@ -1231,7 +1241,7 @@
   <section id="testimonios-v2" class="testi-v2">
     <div class="testi-v2-container">
       <div class="testi-v2-image">
-        <img loading="lazy" src="images/testimony_default.png" alt="Consulta quiropráctica">
+        <img loading="lazy" decoding="async" src="images/testimony_default.png" alt="Consulta quiropráctica">
       </div>
       <div class="testi-v2-content">
         <div class="testi-v2-badge">
@@ -1255,7 +1265,7 @@
 
         <div class="testi-v2-footer">
           <div class="testi-v2-author">
-            <img loading="lazy" src="images/practicas3.jpeg" alt="Judith Rodriguez">
+            <img loading="lazy" decoding="async" src="images/practicas3.jpeg" alt="Judith Rodriguez">
             <div class="author-details">
               <h4>Judith Rodriguez</h4>
               <span>Lesión Deportiva</span>
@@ -1292,13 +1302,13 @@
       <h2 class="section-title">Obras Sociales</h2>
       <p>Trabajamos con una amplia variedad de coberturas para facilitar tu acceso a la salud.</p>
       <div class="insurance-grid">
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="OSDE"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Swiss Medical"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social3.svg" alt="Galeno"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social4.svg" alt="Medicus"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social1.svg" alt="OSDE"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social2.svg" alt="Swiss Medical"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social3.svg" alt="Galeno"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social4.svg" alt="Medicus"></div>
         <!-- Repeated logos for more density -->
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="OSDE"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Swiss Medical"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social1.svg" alt="OSDE"></div>
+        <div class="insurance-logo"><img loading="lazy" decoding="async" src="images/obra_social2.svg" alt="Swiss Medical"></div>
       </div>
     </div>
   </section>
@@ -1313,7 +1323,7 @@
         <!-- Brand & About -->
         <div class="footer-brand-section">
           <a href="#" class="brand footer-brand">
-            <img loading="lazy" src="logoFondo.png" alt="logo" height="100" width="100">
+            <img loading="lazy" decoding="async" src="logoFondo.png" alt="logo" height="100" width="100">
           </a>
           <p class="footer-desc">
             Brindamos atención quiropráctica profesional enfocada en mejorar su salud, aliviar dolores crónicos y
