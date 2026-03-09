@@ -74,6 +74,24 @@
       height: 75px;
     }
 
+    /* Skip Link Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary-dark);
+      color: white;
+      padding: 1rem;
+      z-index: 1000;
+      transition: top 0.3s;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     /* Ambient Animated Background Blob/Gradients */
     .ambient-bg {
       position: fixed;
@@ -582,6 +600,23 @@
       font-family: 'Outfit', sans-serif;
     }
 
+    .author-name {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      color: var(--primary-dark);
+      font-size: 1.15rem;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .testi-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
     .mt-4 {
       margin-top: 1rem;
     }
@@ -604,6 +639,11 @@
       z-index: 100;
       transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
       animation: pulse-wa 2s infinite;
+      outline-offset: 4px;
+    }
+
+    .whatsapp-float:focus {
+      outline: 3px solid #25d366;
     }
 
     .whatsapp-float:hover {
@@ -664,7 +704,8 @@
   </style>
 </head>
 
-<body>
+<body id="top">
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
   <!-- Background Animado -->
   <div class="ambient-bg">
@@ -675,8 +716,8 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="#" class="brand">
-      <img loading="eager" class="logo" src="logo-removebg-preview.png" alt="logo">
+    <a href="#top" class="brand" aria-label="Quiropraxia Mattaldi - Inicio">
+      <img loading="eager" class="logo" src="logo-removebg-preview.png" alt="Logo de Quiropraxia Mattaldi">
     </a>
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
@@ -703,7 +744,7 @@
   </nav>
 
   <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobile-menu">
+  <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación móvil">
     <button class="close-menu-btn" aria-label="Cerrar menú">
       <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
         stroke-linecap="round" stroke-linejoin="round">
@@ -711,15 +752,19 @@
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
-    <a href="#servicios" class="mobile-link">Servicios</a>
-    <a href="#instalaciones" class="mobile-link">Instalaciones</a>
-    <a href="#consultorio" class="mobile-link">Consultorio</a>
-    <a href="#equipo" class="mobile-link">Equipo</a>
-    <a href="#turnos" class="mobile-link">Turnos</a>
-    <a href="#mitos" class="mobile-link">Mitos</a>
-    <a href="#testimonios" class="mobile-link">Testimonios</a>
-    <a href="https://wa.me/5491166150592" class="btn btn-primary mt-4">Contacto</a>
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#instalaciones" class="mobile-link">Instalaciones</a>
+      <a href="#consultorio" class="mobile-link">Consultorio</a>
+      <a href="#equipo" class="mobile-link">Equipo</a>
+      <a href="#turnos" class="mobile-link">Turnos</a>
+      <a href="#mitos" class="mobile-link">Mitos</a>
+      <a href="#testimonios" class="mobile-link">Testimonios</a>
+      <a href="https://wa.me/5491166150592" class="btn btn-primary mt-4">Contacto</a>
+    </nav>
   </div>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="hero">
@@ -788,7 +833,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="servicios" class="services-section">
+  <section id="servicios" class="services-section" aria-labelledby="servicios-title">
     <div class="services-bg-shapes">
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
@@ -796,7 +841,7 @@
 
     <div class="services-container">
       <div class="services-header">
-        <h2>¡Decile Adios a ese dolor crónico!</h2>
+        <h2 id="servicios-title">¡Decile Adios a ese dolor crónico!</h2>
       </div>
 
       <div class="services-layout">
@@ -842,20 +887,20 @@
   </section>
 
   <!-- Extended Services Section -->
-  <section id="instalaciones" class="extended-services">
+  <section id="instalaciones" class="extended-services" aria-labelledby="instalaciones-title">
     <div class="extended-container">
-      <h2 class="section-title">Instalaciones y Servicios</h2>
+      <h2 class="section-title" id="instalaciones-title">Instalaciones y Servicios</h2>
 
       <div class="facilities-layout">
-        <div class="facilities-tabs">
-          <button class="tab-btn active">Evaluación Inicial</button>
-          <button class="tab-btn">Ajuste Quiropráctico</button>
-          <button class="tab-btn">Fisioterapia</button>
-          <button class="tab-btn">Rehabilitación Deportiva</button>
-          <button class="tab-btn">Masoterapia</button>
+        <div class="facilities-tabs" role="tablist" aria-label="Nuestros servicios e instalaciones">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="facility-panel" id="tab-evaluacion">Evaluación Inicial</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="facility-panel" id="tab-ajuste">Ajuste Quiropráctico</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="facility-panel" id="tab-fisioterapia">Fisioterapia</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="facility-panel" id="tab-rehabilitacion">Rehabilitación Deportiva</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="facility-panel" id="tab-masoterapia">Masoterapia</button>
         </div>
 
-        <div class="facilities-display">
+        <div class="facilities-display" role="tabpanel" id="facility-panel" aria-labelledby="tab-evaluacion">
           <div class="facilities-img-wrapper">
             <img loading="lazy" id="facility-image" src="images/cons_interior1.jpeg" alt="Evaluación Inicial">
           </div>
@@ -912,7 +957,7 @@
           </div>
 
           <!-- Text Info -->
-          <div class="gallery-info">
+          <div class="gallery-info" aria-live="polite">
             <span class="gallery-tag" id="main-gallery-tag">Espacio</span>
             <h3 id="main-gallery-title">Atención Personalizada</h3>
             <p id="main-gallery-desc">Un entorno cálido diseñado para tu total relajación y confort.</p>
@@ -921,28 +966,28 @@
 
         <!-- Thumbnails -->
         <div class="thumbnail-track-container">
-          <div class="thumbnail-track">
-            <div class="thumbnail active" data-index="0">
-              <img src="images/cons_interior3.jpg" alt="Consultorio Principal">
-            </div>
-            <div class="thumbnail" data-index="1">
-              <img src="images/equipos1.jpeg" alt="Tecnología de Diagnóstico">
-            </div>
-            <div class="thumbnail" data-index="2">
-              <img src="images/cons_exterior3.jpeg" alt="Fachada del Consultorio">
-            </div>
-            <div class="thumbnail" data-index="3">
-              <img src="images/equipos5.jpg" alt="Bio-Tecnología">
-            </div>
-            <div class="thumbnail" data-index="4">
-              <img src="images/equipos3.jpeg" alt="Fisioterapia y Rehabilitación">
-            </div>
-            <div class="thumbnail" data-index="5">
-              <img src="images/cons_interior4.jpg" alt="Confort en atención">
-            </div>
-            <div class="thumbnail" data-index="6">
-              <img src="images/equipos6.jpg" alt="Equipos de Recuperación">
-            </div>
+          <div class="thumbnail-track" role="region" aria-label="Miniaturas de la galería">
+            <button class="thumbnail active" data-index="0" aria-label="Ver Consultorio Principal">
+              <img src="images/cons_interior3.jpg" alt="">
+            </button>
+            <button class="thumbnail" data-index="1" aria-label="Ver Tecnología de Diagnóstico">
+              <img src="images/equipos1.jpeg" alt="">
+            </button>
+            <button class="thumbnail" data-index="2" aria-label="Ver Fachada del Consultorio">
+              <img src="images/cons_exterior3.jpeg" alt="">
+            </button>
+            <button class="thumbnail" data-index="3" aria-label="Ver Bio-Tecnología">
+              <img src="images/equipos5.jpg" alt="">
+            </button>
+            <button class="thumbnail" data-index="4" aria-label="Ver Fisioterapia y Rehabilitación">
+              <img src="images/equipos3.jpeg" alt="">
+            </button>
+            <button class="thumbnail" data-index="5" aria-label="Ver Confort en atención">
+              <img src="images/cons_interior4.jpg" alt="">
+            </button>
+            <button class="thumbnail" data-index="6" aria-label="Ver Equipos de Recuperación">
+              <img src="images/equipos6.jpg" alt="">
+            </button>
           </div>
         </div>
       </div>
@@ -1132,51 +1177,51 @@
 
       <div class="testimonials-grid">
         <!-- Testimonial 1 -->
-        <div class="testimonial-card">
+        <div class="testimonial-card" role="article" aria-label="Testimonio de Miguel G.">
           <div class="quote-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
             </svg>
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img loading="lazy" src="images/testimony_default.png" alt="Miguel G.">
+              <img loading="lazy" src="images/testimony_default.png" alt="">
             </div>
             <div class="author-info">
-              <h4>Miguel G.</h4>
+              <strong class="author-name">Miguel G.</strong>
               <span>Tratamiento Médico</span>
             </div>
           </div>
-          <div class="testimonial-content">
-            <h4>Excelente atención y resultados.</h4>
+          <blockquote class="testimonial-content">
+            <h3 class="testi-title">Excelente atención y resultados.</h3>
             <p>Llegué con un dolor insoportable en la zona baja de la espalda y después de unas pocas sesiones de ajuste
               quiropráctico, pude volver a mis actividades normales sin molestias. Totalmente recomendado.</p>
-          </div>
+          </blockquote>
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="testimonial-card">
+        <div class="testimonial-card" role="article" aria-label="Testimonio de Sarah M.">
           <div class="quote-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
             </svg>
           </div>
           <div class="testimonial-author">
             <div class="author-img">
-              <img loading="lazy" src="images/testimony_default.png" alt="Sarah M.">
+              <img loading="lazy" src="images/testimony_default.png" alt="">
             </div>
             <div class="author-info">
-              <h4>Sarah M.</h4>
+              <strong class="author-name">Sarah M.</strong>
               <span>Rehabilitación Postural</span>
             </div>
           </div>
-          <div class="testimonial-content">
-            <h4>Mi postura cambió por completo.</h4>
+          <blockquote class="testimonial-content">
+            <h3 class="testi-title">Mi postura cambió por completo.</h3>
             <p>Pasaba muchas horas trabajando en la computadora y mi cuello siempre estaba tenso. Gracias a las sesiones
               y los ejercicios recomendados, el dolor desapareció y siento mi columna más alineada.</p>
-          </div>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -1247,16 +1292,18 @@
       <h2 class="section-title">Obras Sociales</h2>
       <p>Trabajamos con una amplia variedad de coberturas para facilitar tu acceso a la salud.</p>
       <div class="insurance-grid">
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="Obra Social 1"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Obra Social 2"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social3.svg" alt="Obra Social 3"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social4.svg" alt="Obra Social 4"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="OSDE"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Swiss Medical"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social3.svg" alt="Galeno"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social4.svg" alt="Medicus"></div>
         <!-- Repeated logos for more density -->
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="Obra Social 1"></div>
-        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Obra Social 2"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social1.svg" alt="OSDE"></div>
+        <div class="insurance-logo"><img loading="lazy" src="images/obra_social2.svg" alt="Swiss Medical"></div>
       </div>
     </div>
   </section>
+
+</main>
 
   <!-- Footer Section -->
   <footer class="site-footer">
@@ -1275,7 +1322,7 @@
           <div class="footer-social">
             <span>Síguenos en</span>
             <div class="social-links">
-              <a href="https://www.instagram.com/quiropraxiamattaldi" class="social-icon">
+              <a href="https://www.instagram.com/quiropraxiamattaldi" class="social-icon" aria-label="Instagram de Quiropraxia Mattaldi">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
@@ -1421,11 +1468,18 @@
       }
     };
 
+    const facilityPanel = document.getElementById('facility-panel');
+
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active class
-        tabBtns.forEach(b => b.classList.remove('active'));
+        // Update active class and ARIA
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        facilityPanel.setAttribute('aria-labelledby', btn.id);
 
         // Update content
         const data = facilityData[btn.innerText];
@@ -1450,8 +1504,17 @@
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     const toggleMenu = () => {
+      const isActive = mobileMenuOverlay.classList.contains('active');
       mobileMenuOverlay.classList.toggle('active');
       document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+      
+      if (!isActive) {
+        // Opening: Focus close button
+        setTimeout(() => closeMenuBtn.focus(), 100);
+      } else {
+        // Closing: Focus open button
+        mobileMenuBtn.focus();
+      }
     };
 
     mobileMenuBtn.addEventListener('click', toggleMenu);
